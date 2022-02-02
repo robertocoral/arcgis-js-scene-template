@@ -1,12 +1,13 @@
-require(["esri/Map", "esri/views/MapView"], function (Map, MapView) {
-        var map = new Map({
-          basemap: "topo-vector"
-        });
+require(["esri/Map", "esri/views/SceneView"], function (Map, SceneView) {
+var map = new Map({
+  basemap: "streets-vector",
+  ground: "world-elevation"
+});
 
-        var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          zoom: 4,
-          center: [15, 65] // longitude, latitude
-        });
-      });
+var view = new SceneView({
+  container: "viewDiv",
+  map: map,
+  scale: 5000000,
+  center:  [15, 65]
+  });
+});
